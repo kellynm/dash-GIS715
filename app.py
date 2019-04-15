@@ -104,11 +104,14 @@ app.layout = html.Div(
             [
                 html.H1(children='California Wildfires (1990-2015)',
                         className='nine columns'),
+                html.Div(className='three columns'),
+                
                 html.H2(children='''
                         GIS 714 - Dash Lab
                         ''',
                         className='nine columns'
-                )
+                ),
+                
             ], className="row"
         ),
 

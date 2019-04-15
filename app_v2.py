@@ -14,9 +14,9 @@ df = pd.read_csv('data/ca_fires.csv')
 # Select only required columns
 map_data = df[["fire_name", "fire_year", "date", "fire_size", "latitude", "longitude", "cause", "duration_days"]].drop_duplicates()
 
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+#external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = dash.Dash(__name__) # can add reference to external style sheet here
 app.title = 'California Wildfires' # This is what shows up as the browser tab name
 
 app.layout = html.Div([
@@ -44,15 +44,16 @@ app.layout = html.Div([
         )
     ]),
     html.Div([
-        dcc.Slider(id="year-slider",
-                    min=map_data['fire_year'].min(),
-                    max=map_data['fire_year'].max(),
-                    value=map_data['fire_year'].min(),
-                    marks={str(fire_year): str(fire_year) for fire_year in map_data['fire_year'].unique()}
+        dcc.Slider(
+            id="year-slider",
+            min=map_data['fire_year'].min(),
+            max=map_data['fire_year'].max(),
+            value=map_data['fire_year'].min(),
+            marks={str(fire_year): str(fire_year) for fire_year in map_data['fire_year'].unique()}
         )
     ]),
     html.Div(dcc.Graph(id="my-graph"))
-],className="container")
+])
 
 
 @app.callback(

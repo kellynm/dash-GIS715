@@ -1,5 +1,10 @@
+# step1_bubble.py
+# GIS 715 Student-led lab - Dash
+# Create app with bubble chart of California fires by cause. 
+
+# To start, we will just recreate the bubble chart from the ggplotly lab and display it with the default plotly functionality. 
+
 import dash
-from dash.dependencies import Input, Output
 import dash_html_components as html
 import dash_core_components as dcc
 
@@ -12,18 +17,22 @@ app.title = 'California Wildfires' # This is what shows up as the browser tab na
 df = pd.read_csv('data/ca_fires.csv') # Use pandas (Python's data science package which uses dataframes) to read the California fires data
 df.duration_days = df.duration_days.fillna(0.0).astype(int) # Change duration to integer for prettier printing. This also changes any missing values to 0, which is not the best solution...
 
-# Notice there is only one main layout object in this script. This is the major piece of your app. 
+# Notice there is only one main Dash layout object in this script. 
 # It sets the layout and specifies what data visualizations will be included. It is made up of dash html components and dash core components.
+# You can include as many core components (graphs, tables, interactive elements) as you want, but each must have a unique id name.
 app.layout = html.Div(children=[
     html.H1(children='California Wildfires'), # Title
 
     html.H2(children='''
-        1993-2015
-    '''), # Subtitle
-    
-# A graph component. It must have an id and figure elements. And the figure element must have data and layout elements.
-# This graph is very similar to the ggplotly bubble graph we made earlier this week.   
-    dcc.Graph(
+        1992-2015
+    '''),
+    html.H5(
+        children='''1,000 ac or larger''',
+         style={
+            'textAlign': 'center'
+        }
+    ), # Subtitle   
+    dcc.Graph( # A graph component. It must have an id and figure elements. And the figure element must have data and layout elements. This graph is very similar to the ggplotly bubble graph we made earlier this week.
         id='bubble',
         figure={
             'data': [
@@ -45,7 +54,9 @@ app.layout = html.Div(children=[
                     ) for i in df.cause.unique() # Using a FOR loop to plot fires from each cause category (Human, Natural, Unknown) separately so the fires points will be colored by cause.
                ],
             'layout': go.Layout( # Customize the graph layout
-                xaxis={'title': 'Date'},
+                xaxis={'title': 'Date',
+                       'tickvals': ['2017-01-01', '2017-03-01', '2017-05-01', '2017-07-01', '2017-09-01', '2017-11-01', '2018-01-01'],
+                       'ticktext': ['Jan', 'Mar', 'May', 'Jul', 'Sept', 'Nov', 'Jan']},
                 yaxis={'title': 'Year'},
                 margin={'l': 40, 'b': 40, 't': 10, 'r': 10},
                 legend={'x': 0, 'y': 1},
@@ -56,6 +67,6 @@ app.layout = html.Div(children=[
     )
 ])
 
-# Run the app on local server
+# Run the app
 if __name__ == '__main__':
     app.run_server(debug=True)

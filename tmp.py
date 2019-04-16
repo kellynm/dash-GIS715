@@ -1,10 +1,15 @@
 import pandas as pd
 df = pd.read_csv('data/ca_fires.csv')
 
-df['plot_date'] = df['plot_date'].astype('datetime64[ns]')
+selected_range = [1995,2001]
 
-df['plot_date'] = df['plot_date'].dt.date
+start = selected_range[0]
+end = selected_range[1]
+year_list = list(range(start, end+1))
 
-print(df.plot_date)
-
-
+filtered_df = pd.DataFrame()
+for year in year_list:
+    new_df=df[df.fire_year == year]
+    filtered_df = filtered_df.append(new_df)
+print(list(filtered_df))
+print(type(df.fire_year))

@@ -12,7 +12,7 @@ app.title = 'California Wildfires' # This is what shows up as the browser tab na
 # Boostrap CSS.
 app.css.append_css({'external_url': 'https://codepen.io/amyoshino/pen/jzXypZ.css'})
 
-df = pd.read_csv('data/ca_fires_v2.csv')
+df = pd.read_csv('data/ca_fires.csv')
 df.duration_days = df.duration_days.fillna(0.0).astype(int) # Changes missing values to 0, not the best solution
 
 # Mapbox API key

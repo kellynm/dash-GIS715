@@ -1,6 +1,7 @@
 # step2_rangeSlider.py
 # GIS 715 Student-led lab - Dash
 # Add range slide to interactively select range of years for filtering date and update bubble chart. 
+
 # To add any interactive elements (beyond what comes out of the box), like check boxes, drop drow select, or sliders,
 # you have to add a callback which takes an input core component (a range slider in this case) and outputs another 
 # core component (a graph using the filtered data in this case). When the interactive event fires (moving the slider),

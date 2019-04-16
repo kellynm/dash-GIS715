@@ -99,7 +99,7 @@ app.layout = html.Div(children=[
         ),
             html.Div(
                 [
-                    html.P('Created by Kellyn Montgomery for GIS 715 Geovisualization Student-led Lab, Spring 2019', style = {'display': 'inline'})
+                    html.P('Created by Kellyn Montgomery for GIS 715 Geovisualization Student-led Lab, Spring 2018', style = {'display': 'inline'})
                 ], className = "twelve columns",
                     style = {'fontSize': 18, 'padding-top': 20}
             ),

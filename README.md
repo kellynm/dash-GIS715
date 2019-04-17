@@ -85,3 +85,20 @@ Just like before, we will add another callback that takes the range slider years
 This will execute the code and run the app on localhost server.
 
 3. In the terminal output, an IP address will be listed (http://127.0.0.1:8050/). <b>Ctrl + click</b> the address to open the app in a browser. Use <b>Crtl + C</b> to terminate the server if needed.
+
+## 7. Add a data table component
+
+1. Try adding a data table component below the map and bubble plot. You'll need to import the dash_table library.
+
+```
+import dash_table as dt
+
+html.Div(
+    [
+        dt.DataTable(
+            id='table',
+            columns=[{"name": i, "id": i} for i in df.columns],
+            data=df.to_dict("rows"),
+            style_table={'overflowX': 'scroll'}
+        )]
+```

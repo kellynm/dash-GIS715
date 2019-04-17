@@ -108,5 +108,6 @@ html.Div(
 ## Resources
 
 * Announcement of Dash release with high level description - https://medium.com/@plotlygraphs/introducing-dash-5ecf7191b503
+* Introductory tutorial - https://dash.plot.ly/getting-started
 * Plot.ly documentation - https://plot.ly/python/reference/
 * Collection of Dash resources including tutorials - https://github.com/ucg8j/awesome-dash

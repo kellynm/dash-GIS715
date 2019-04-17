@@ -1,7 +1,7 @@
 # Dash by Plotly
  GIS 714 Geovisualization Spring 2019 - Student-led lab
 
-Dash is a Python framework for building interactive web applications for data visualization. Dash is rendered in a browser and uses CSS, so it is highly customizable and each to share via URLs. Dash uses purely Python with html components and Plot.ly graph objects.
+Dash is a Python framework for building interactive web applications for data visualization. Dash is rendered in a browser and uses CSS, so it is highly customizable and easy to share via URLs. Dash uses purely Python with html components and Plot.ly graph objects.
 
 ## 1. Install Dash and Plotly
 * Open <i>Visual Studio Code</i>

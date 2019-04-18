@@ -12,11 +12,14 @@ pip install dash
 pip install plotly --upgrade
 pip install --upgrade pandas
 ```
+## 2. Install Python Extension for VS Code
+* In <i>Visual Studio Code</i>, press <b> Crtl + Shift + X</b> to open the list of available Extensions.
+* Search for Python and click <b>Install</b>.
 
-## 2. Download data and scripts
-1. If you haven't already done so, go to https://github.com/kellynm/dash-GIS715 and download the tutorial repository. (Select "Clone or Download" from the main repo page and download zip.)
-* If you have Git set up on you computer and want to practice doing this in a command line, instead of downloading zip, copy the web URL (https://github.com/kellynm/dash-GIS715.git).
-* In a terminal, navigate to directory where you'd like to save the repository.
+## 3. Download data and scripts
+1. If you haven't already done so, go to https://github.com/kellynm/dash-GIS715 and download the tutorial repository. (Select <b>Clone or Download</b> from the main repo page and download zip.) Alternatively, if you have Git set up on you computer and would prefer to use the command line, follow the bulleted steps below instead of downloading the zip:
+* Select <b>Clone or Download</b> and copy the repository web URL (https://github.com/kellynm/dash-GIS715.git).
+* In a terminal, navigate to the directory where you'd like to save the repository.
 * In terminal, run:
 ```
 git clone https://github.com/kellynm/dash-GIS715.git
@@ -24,7 +27,7 @@ git clone https://github.com/kellynm/dash-GIS715.git
 
 2. In <i>Visual Studio Code</i>, select <b>File</b>, <b>Open folder</b>, and browse to the <b>dash-715</b> folder.
 
-## 3. Run first Dash script to create bubble chart
+## 4. Run first Dash script to create bubble chart
 
 1. Select <b>step1_bubble.py</b> in the Explorer panel to view the first script.
 
@@ -38,7 +41,7 @@ This will execute the code and run the app on localhost server.
 
 3. In the terminal output, an IP address will be listed (http://127.0.0.1:8050/). <b>Ctrl + click</b> the address to open the app in a browser. Use <b>Crtl + C</b> to terminate the server if needed.
 
-## 4. Run second Dash script to add range slider
+## 5. Run second Dash script to add range slider
 
 1. Select <b>step2_rangeSlider.py</b> in the Explorer panel to view the second script.
 
@@ -56,7 +59,7 @@ This will execute the code and run the app on localhost server.
 
 3. In the terminal output, an IP address will be listed (http://127.0.0.1:8050/). <b>Ctrl + click</b> the address to open the app in a browser. Use <b>Crtl + C</b> to terminate the server if needed.
 
-## 5. Run third Dash script to add a map
+## 6. Run third Dash script to add a map
 
 1. Select <b>step3_map.py</b> in the Explorer panel to view the third script.
 
@@ -72,7 +75,7 @@ This will execute the code and run the app on localhost server.
 
 3. In the terminal output, an IP address will be listed (http://127.0.0.1:8050/). <b>Ctrl + click</b> the address to open the app in a browser. Use <b>Crtl + C</b> to terminate the server if needed.
 
-## 6. Run final Dash script to use the range slider to filter the map
+## 7. Run final Dash script to use the range slider to filter the map
 
 1. Select <b>step4_linkGraphs.py</b> in the Explorer panel to view the fourth script.
 
@@ -88,7 +91,7 @@ This will execute the code and run the app on localhost server.
 
 3. In the terminal output, an IP address will be listed (http://127.0.0.1:8050/). <b>Ctrl + click</b> the address to open the app in a browser. Use <b>Crtl + C</b> to terminate the server if needed.
 
-## 7. Add a data table component
+## 8. Add a data table component
 
 1. Try adding a data table component below the map and bubble plot. You'll need to import the dash_table library.
 

@@ -1,7 +1,11 @@
 # Dash by Plotly
- GIS 714 Geovisualization Spring 2019 - Student-led lab
+ ### GIS 714 Geovisualization Spring 2019 - Student-led lab
 
 Dash is a Python framework for building interactive web applications for data visualization. Dash is rendered in a browser and uses CSS, so it is highly customizable and easy to share via URLs. Dash uses purely Python with html components and Plot.ly graph objects.
+
+This tutorial will demonstrate how to create a basic dashboard application showing a bubble chart, map, and interactive filtering with a range slider. The tutorial will add elements step-by-step to demonstrate how to iteratively add functionality to a dashboard. 
+
+This tutorial uses data on California wildfires larger than 1,000 acres from 1992-2015. The original data [linked here](https://github.com/BuzzFeedNews/2018-07-wildfire-trends) was posted by Buzz Feed News.
 
 ## 1. Install Dash and Plotly
 * Open <i>Visual Studio Code</i>
@@ -47,13 +51,13 @@ This will execute the code and run the app on localhost server.
 
 This script will add an interactive range slider to filter the data by years. Read the comments for more details about the code structure. <br>
 
-To add any interactive elements (beyond what comes out of the box), like check boxes, drop drow select, or sliders, you have to add a callback which takes an input core component (a range slider in this case) and outputs another core component (a graph using the filtered data in this case). 
+To add interactive elements, like check boxes, drop down selection, or sliders, you have to add a callback which takes an input core component (a range slider in this case) and outputs another core component (a graph using the filtered data in this case). 
 
 When the interactive event fires (moving the slider in this case), the callback is triggered, which executes a function that will execute the desired response action (updating graph in this case). 
 
-Whenever you add a callback that will result in an updated graph, you must remove the code in the main Dash layout element for the original, static graph.
+Whenever you add a callback that will result in an updated graph, you must remove the code for the original, static graph in the main Dash layout (app.layout).
 
-2. Right click anywhere in the script or on the script file name in the Explorer panel and select <b>Run Python File in Terminal</b>.
+1. Right click anywhere in the script or on the script file name in the Explorer panel and select <b>Run Python File in Terminal</b>.
 
 This will execute the code and run the app on localhost server.
 
@@ -81,7 +85,7 @@ This will execute the code and run the app on localhost server.
 
 This script will add another callback to use the range slider to filter the map data as well. Read the comments for more details about the code structure.
 
-Just like before, we will add another callback that takes the range slider years as input and outputs an updated map. Again, we need to remove the map graph element from the main Dash layout.
+Just like before, we will add a callback that takes the range slider years as input and outputs an updated map. Again, we need to remove the map graph element from the main Dash layout.
 
 2. On line 27 of the script, insert your Mapbox token.
 
@@ -95,7 +99,7 @@ This will execute the code and run the app on localhost server.
 
 1. Try adding a data table component below the map and bubble plot. You'll need to import the dash_table library.
 
-```
+```python
 import dash_table as dt
 
 html.Div(
@@ -109,7 +113,7 @@ html.Div(
 ```
 2. Try another approach for adding data table using a function instead of dash_table library
 
-```
+```python
 def generate_table(dataframe, max_rows=10):
     return html.Table(
         # Header
@@ -127,7 +131,9 @@ generate_table(df)
 
 ## Resources
 
-* Announcement of Dash release with high level description - https://medium.com/@plotlygraphs/introducing-dash-5ecf7191b503
-* Introductory tutorial - https://dash.plot.ly/getting-started
-* Plot.ly documentation - https://plot.ly/python/reference/
-* Collection of Dash resources including tutorials - https://github.com/ucg8j/awesome-dash
+* [Announcement of Dash release with high level description.](https://medium.com/@plotlygraphs/introducing-dash-5ecf7191b503)
+* [Dash Getting Started tutorial.](https://dash.plot.ly/getting-started)
+* [Helpful tutorial by Adriano Yoshino with videos.](https://github.com/amyoshino/Dash_Tutorial_Series) 
+  <i>Note that some functionality shown in this tutorial is now deprecated, but updates can easily be found in Dash documentation.</i>
+* [Plot.ly documentation.](https://plot.ly/python/reference/)
+* [Collection of Dash resources including tutorials.](https://github.com/ucg8j/awesome-dash)

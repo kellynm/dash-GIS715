@@ -24,7 +24,7 @@ df.duration_days = df.duration_days.fillna(0.0).astype(int)
 
 # Mapbox API key
 # Insert your key below.
-mapbox_access_token = 'YOUR_TOKEN_HERE'
+mapbox_access_token = 'pk.eyJ1Ijoia2VsbHlubSIsImEiOiJjanM0eDF0ZngwMjZ0M3lwYjV5MWxqZm1xIn0.49GaijkpupewHcHf2niUDA'
 
 # Set up layout for map
 layout_map = dict(
